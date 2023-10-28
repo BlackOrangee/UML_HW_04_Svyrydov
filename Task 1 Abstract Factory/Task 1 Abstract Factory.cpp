@@ -19,29 +19,29 @@ int main() {
     // Create a player in the Fantasy World
     Player fantasyPlayer(new FantasyWorld());
 
-    std::cout << "Fantasy World - Demonstration:" << std::endl;
-    std::cout << "--------------------------------" << std::endl;
+    cout << "Fantasy World - Demonstration:" << endl;
+    cout << "--------------------------------" << endl;
 
-    std::cout << "Creating an Enemy in Fantasy World:" << std::endl;
+    cout << "Creating an Enemy in Fantasy World:" << endl;
     fantasyPlayer.createEnemy();
-    std::cout << "--------------------------------" << std::endl;
+    cout << "--------------------------------" << endl;
 
-    std::cout << "Creating a Hero in Fantasy World:" << std::endl;
+    cout << "Creating a Hero in Fantasy World:" << endl;
     fantasyPlayer.createHero();
-    std::cout << "--------------------------------" << std::endl;
+    cout << "--------------------------------" << endl;
 
     // Create a player in the SiPop World
     Player sipopPlayer(new SiPopWorld());
 
-    std::cout << "SiPop World - Demonstration:" << std::endl;
-    std::cout << "--------------------------------" << std::endl;
+    cout << "SiPop World - Demonstration:" << endl;
+    cout << "--------------------------------" << endl;
 
-    std::cout << "Creating an Enemy in SiPop World:" << std::endl;
+    cout << "Creating an Enemy in SiPop World:" << endl;
     sipopPlayer.createEnemy();
-    std::cout << "--------------------------------" << std::endl;
+    cout << "--------------------------------" << endl;
 
-    std::cout << "Creating a Hero in SiPop World:" << std::endl;
+    cout << "Creating a Hero in SiPop World:" << endl;
     sipopPlayer.createHero();
-    std::cout << "--------------------------------" << std::endl;
+    cout << "--------------------------------" << endl;
 
 }
