@@ -9,3 +9,9 @@ void JPEGImageProcessor::save()
 {
 	cout << "Saving JPEG image" << endl;
 }
+
+ImageProcessor* JPEGImageProcessor::Create()
+{
+	ImageProcessor* toReurn = new JPEGImageProcessor();
+	return toReurn;
+}

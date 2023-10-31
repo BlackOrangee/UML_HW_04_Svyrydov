@@ -3,25 +3,21 @@
 
 #include <iostream>
 #include "ImageProcessor.h"
-#include "ImageProcessorFactory.h"
-#include "JPEGImageProcessorFactory.h"
-#include "PNGImageProcessorFactory.h"
+#include "JPEGImageProcessor.h"
+#include "PNGImageProcessor.h"
 
 using namespace std;
 
-void Client(ImageProcessorFactory* factory)
+
+int main()
 {
-    ImageProcessor* processor = factory->createImageProcessor();
-    processor->load();
-    processor->save();
-}
+	ImageProcessor* JPEG = new JPEGImageProcessor();
+	
+	JPEG->load();
+	JPEG->save();
+	
+	ImageProcessor* PNG = new PNGImageProcessor();
 
-int main() {
-    ImageProcessorFactory* JPEGfactory = new JPEGImageProcessorFactory(); // Можна змінювати фабрику для обробки різних типів зображень
-
-    Client(JPEGfactory);
-    
-    ImageProcessorFactory* PNGfactory = new PNGImageProcessorFactory(); // Можна змінювати фабрику для обробки різних типів зображень
-
-    Client(PNGfactory);
+	PNG->load();
+	PNG->save();
 }

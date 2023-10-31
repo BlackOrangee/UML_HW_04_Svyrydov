@@ -7,5 +7,6 @@ public:
     void load() override;
 
     void save() override;
-};
 
+    ImageProcessor* Create() override;
+};

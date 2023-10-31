@@ -9,3 +9,9 @@ void PNGImageProcessor::save()
 {
 	cout << "Saving PNG image" << endl;
 }
+
+ImageProcessor* PNGImageProcessor::Create()
+{
+	ImageProcessor* toReturn = new PNGImageProcessor();
+	return toReturn;
+}
