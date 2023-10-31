@@ -2,27 +2,25 @@
 
 MailMessageBuilder::MailMessageBuilder()
 {
-    this->Reset();
+	this->message = new MailMessage();
 }
 
-void MailMessageBuilder::Reset()
+void MailMessageBuilder::createHeader()
 {
-    this->product = new Product();
+	message->addPart("Mail header");
 }
 
-void MailMessageBuilder::ProduceText()
+void MailMessageBuilder::createText()
 {
-    this->product->parts.push_back("Text");
+	message->addPart("Mail text");
 }
 
-void MailMessageBuilder::ProduceImage()
+void MailMessageBuilder::createFooter()
 {
-    this->product->parts.push_back("Image");
+	message->addPart("Mail footer");
 }
 
-Product* MailMessageBuilder::GetProduct()
+Message* MailMessageBuilder::build()
 {
-    Product* result = this->product;
-    this->Reset();
-    return result;
+	return message;
 }

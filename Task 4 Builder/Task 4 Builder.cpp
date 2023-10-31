@@ -3,33 +3,37 @@
 
 #include <iostream>
 #include <vector>
-#include "Product.h"
 #include "MessageBuilder.h"
 #include "MailMessageBuilder.h"
 #include "SimpleMessageBuilder.h"
+#include "Message.h"
+#include "MailMessage.h"
+#include "SimpleMessage.h"
 
 using namespace std;
 
-void ClientCode()
+int main()
 {
-    cout << "Text messenger:\n";
-    SimpleMessageBuilder* textBuilder = new SimpleMessageBuilder();
-    textBuilder->ProduceText();
+	MessageBuilder* builder = new MailMessageBuilder();
 
-    Product* textProduct = textBuilder->GetProduct();
-    textProduct->ListParts();
+	builder->createHeader();
+	builder->createText();
+	builder->createFooter();
+	
+	Message* mail = builder->build();
+
+	cout << "\nMail message parts:\n";
+	mail->printParts();
 
 
-    cout << "Mail messenger:\n";
-    MailMessageBuilder* mailBuilder = new MailMessageBuilder();
-    mailBuilder->ProduceText();
-    mailBuilder->ProduceImage();
+	builder = new SimpleMessageBuilder();
 
-    Product* mailProduct = mailBuilder->GetProduct();
-    mailProduct->ListParts();
+	builder->createHeader();
+	builder->createText();
+	builder->createFooter();
 
-}
+	Message* simple = builder->build();
 
-int main() {
-    ClientCode();
+	cout << "\nSimple message parts:\n";
+	simple->printParts();
 }

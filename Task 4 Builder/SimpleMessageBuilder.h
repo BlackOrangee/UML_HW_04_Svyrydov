@@ -1,23 +1,18 @@
 #pragma once
 #include "MessageBuilder.h"
-#include "Product.h"
+#include "SimpleMessage.h"
 
 class SimpleMessageBuilder :
     public MessageBuilder
 {
 private:
-
-    Product* product;
+    Message* message;
 public:
-
     SimpleMessageBuilder();
+    void createHeader() override;
+    void createText() override;
+    void createFooter() override;
+    Message* build() override;
 
-    void Reset();
-
-    void ProduceText() override;
-
-    void ProduceImage() override;
-
-    Product* GetProduct();
 };
 

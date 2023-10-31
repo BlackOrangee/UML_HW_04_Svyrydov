@@ -1,28 +1,27 @@
 #include "SimpleMessageBuilder.h"
 
+
 SimpleMessageBuilder::SimpleMessageBuilder()
 {
-    this->Reset();
+	this->message = new SimpleMessage();
 }
 
-void SimpleMessageBuilder::Reset()
+void SimpleMessageBuilder::createHeader()
 {
-    this->product = new Product();
+	message->addPart("Simple header");
 }
 
-void SimpleMessageBuilder::ProduceText()
+void SimpleMessageBuilder::createText()
 {
-    this->product->parts.push_back("Text");
+	message->addPart("Simple text");
 }
 
-void SimpleMessageBuilder::ProduceImage()
+void SimpleMessageBuilder::createFooter()
 {
-    this->product->parts.push_back("Not support images");
+	message->addPart("Simple footer");
 }
 
-Product* SimpleMessageBuilder::GetProduct()
+Message* SimpleMessageBuilder::build()
 {
-    Product* result = this->product;
-    this->Reset();
-    return result;
+	return message;
 }
