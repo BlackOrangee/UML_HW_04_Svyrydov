@@ -24,12 +24,6 @@
     <ClCompile Include="PNGImageProcessor.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="JPEGImageProcessorFactory.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
-    <ClCompile Include="PNGImageProcessorFactory.cpp">
-      <Filter>Исходные файлы</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ImageProcessor.h">
@@ -39,15 +33,6 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="PNGImageProcessor.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="ImageProcessorFactory.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="JPEGImageProcessorFactory.h">
-      <Filter>Файлы заголовков</Filter>
-    </ClInclude>
-    <ClInclude Include="PNGImageProcessorFactory.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
